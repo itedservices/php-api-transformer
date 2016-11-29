@@ -313,7 +313,7 @@ class MappingFactory
     {
         if (false === empty($mappedClass[static::REQUIRED_PROPERTIES_KEY])) {
             $mapping->setRequiredProperties($mappedClass[static::REQUIRED_PROPERTIES_KEY]);
-            foreach (\array_keys($mapping->getRequiredProperties()) as $propertyName) {
+            foreach ($mapping->getRequiredProperties() as $propertyName) {
                 if (false === \in_array($propertyName, static::getClassProperties($className), true)) {
                     throw new MappingException(
                         \sprintf(
